@@ -1,0 +1,44 @@
+Entreprise,Contrat,Pays,Ville,Statut,Lettre_Motivation,CV,Plateforme,Date_Candidature,Date_Reponse,Poste,Profil_Recherche,Contact_HR,Langue,Feedback
+BigBlue,Alternance,France,Paris,Refus,https://drive.google.com/file/d/1OBgrGaRdi3GuE2kArknms4Z3dz0nCWfY/view?usp=sharing,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,12 mars 2025,17 mars 2025,Software Engineer Intern,"Étudiant en Grande École d'Ingénieurs en stage de césure ou de fin d'études; maîtrise de l'anglais (tous nos documents, code et specs sont rédigés en anglais); forte envie d'apprendre et découvrir de nouvelles technologies, curiosité intellectuelle et ouverture; détermination et excellence dans le travail; intérêt pour le monde de la start-up/ le e-commerce; capacité à être autonome et à fonctionner en équipe; une première expérience en software engineering ou notions en code",N/A,FR,Expérience de travail insuffisante.
+RTE Réseau de Transport d'Electricité,Alternance,France,La défense,Sans réponse,https://drive.google.com/file/d/1Eld2DF9n9iSWMeEG6p7i-nvv_YPIk2qZ/view?usp=drive_link,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,17 mars 2025,,Développeur logiciel,"Vous êtes reconnu(e) pour vos capacités relationnelles, orales et écrites et votre adaptabilité; Vous êtes curieux(se), autonome et vous appréciez prendre des initiatives
+Vous maîtrisez la suite office. Une connaissance de Java et/ou de Linux est un plus.
+Une appétence pour le secteur de l'énergie et de l'électricité sera appréciée
+La maîtrise de l'anglais (niveau B2) est requise",N/A,FR,
+"
+ENERGIE RECRUTE",Alternance,France,Paris,Sans réponse,N/A,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,17 mars 2025,,Software Engineer Intern,"Business sense and demonstrated self-learning capabilities
+Good knowledge of data structures (e.g. arrays, stacks, queues, hash tables, trees, heaps) and common algorithms (e.g. sorting, searching, hashing)
+Basic knowledge of machine learning and optimization algorithms in production
+Programming experience in JavaScript (preferably using Flow or TypeScript), ideally with a knowledge of React
+Programming experience with Python and with a statically typed back-end language
+Experience with relational databases (e.g. MySQL, PostgreSQL, Oracle) with a great understanding of query execution plans
+Ideally a good knowledge of Cloud providers (e.g AWS, Azure, OVH, GCP) and docker containers
+Ideally a good knowledge of the common CI / CD tools (e.g. Git, Travis, Jenkins)
+Basic knowledge of Linux and system administration duties",N/A,FR,
+Groupe ADP,Alternance,France,CDG,Sans réponse,N/A,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,17 mars 2025,,Automaticien/Informaticien,"Automatisme : compréhension et amélioration des systèmes automatisés.
+Informatique industrielle : développement, mise à jour et suivi des systèmes d'exploitation.
+Analyse et résolution de problèmes : capacité à identifier les points de blocage et proposer des solutions adaptées.
+Vous possédez un esprit d'analyse et de synthèse.Vous êtes rigoureux et autonome.Vous êtes force de proposition pour contribuer aux innovations du secteur.",N/A,FR,
+Lobster,Alternance,France,Paris ,Sans réponse,https://drive.google.com/file/d/1yPfyD2-UcpbtIhp-4MLdTqy-k8z5_r8f/view?usp=drive_link,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,17 mars 2025,,Développeur fullstack Blockchain,"Connaissances en UX/UI, ainsi qu'en typescript
+Compétences back end : Node.js (Express, Typescript), Rust.
+Smart contracts : Solidity (Ethereum, EVM-based chains).
+Infrastructure et systèmes : Linux (gestion de serveurs, conteneurisation avec Docker).
+Bases de données : PostgreSQL.
+Indexation et données on-chain : The Graph, Substreams, systèmes d'indexation personnalisés.
+Développement frontend : React, Next.js (pour dashboards et interfaces utilisateur).",N/A,FR,
+Bouygues,Alternance,France,Meudon-la-Forêt ,Sans réponse,N/A,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,17 mars 2025,,Automaticien tests,"Vous aimez travailler dans un environnement fonctionnel riche. Vous faites preuve d’un bon relationnel et savez travailler en équipe dans une direction transverse.
+Vous êtes rigoureux, doté.e d'une capacité d'analyse, de synthèse et d'anticipation, vous encouragez l’échange permettant d’identifier une solution commune.
+Vous cherchez à développer vos compétences à la fois techniques, métier, fonctionnelles et humaines.
+Vous êtes curieux(se) et vous recherchez un environnement de travail stimulant et épanouissant. ",N/A,FR,
+UBY,Alternance,France,?,Sans réponse,N/A,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,18 mars 2025,,Développeur informatique,"En alternance (apprentissage ou professionnalisation) dans une école d’ingénieurs (EPITECH, SupInfo, ENSIIE,…) et fort d’une première expérience dans le domaine du développement informatique avec une bonne compréhension des enjeux commerciaux.
+Être curieux(se), rigoureux(se) et avoir une attirance naturelle pour l’innovation. 
+Vous connaissez l’environnement de développement logiciel, y compris dans le cloud (AWS, GPC, Azure) et des langages Front (VueJs, Angular), Back (NodeJs, Go, C#) et Mobile (Flutter).
+ Vous connaissez les concepts d’interfaçage (API, MQTT, ...), de de stockage relationnel (SQL) et non relationnel (Elastic search, InfluxDB) ainsi que les architectures Micro-services (Kubernetes, Docker, …).
+Vous êtes reconnu(e) pour votre relationnel et votre communication.",N/A,FR,
+CapGemini,Alternance,France,Issy-les-moulineaux,Sans réponse,N/A,https://drive.google.com/file/d/17wAuDWAWubv4cdNChnlK-003n85iOKUQ/view?usp=drive_link,LinkedIn,18 mars 2025,,Développeur fullstack,"Préparation d’un diplôme Bac+5 ; 
+Passion pour le développement et envie de découvrir de nouvelles technologies ; 
+Goût du travail en équipe. ",N/A,FR,
+Gameloft,Alternance,France,Paris,Refus,https://drive.google.com/file/d/1I9YzLdsxw61jIIFgv2C_iDVmHldobfOG/view?usp=drive_link,https://drive.google.com/file/d/1A4H74Mccxh7bCHlXeUYEEtRHpHDe5YRl/view?usp=drive_link,LinkedIn,4 mars 2025,18 mars 2025,Tools programmer,"University degree in computer science, computer engineering, or equivalent training
+A graduate diploma is a major asset
+At least 3 years of experience in programming
+Mastery of C++ and C#
+Experience with a game engine or in game production is a major asset",N/A,EN,
