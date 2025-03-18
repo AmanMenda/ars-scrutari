@@ -1,4 +1,3 @@
-# main.py
 import pandas as pd
 from dataclasses import dataclass
 from typing import List, Dict, Optional
@@ -50,13 +49,18 @@ class DataAnalyzer:
 class SkillTrendsAnalyzer(DataAnalyzer):
     def __init__(self, df: pd.DataFrame):
         super().__init__(df)
-        self.stop_words = set(['en', 'le', 'la', 'de', 'et', 'à', 'pour', 'dans'])
+        self.skills_words = set([
+            "développement", "C", "C++", "Java", "Python", "JavaScript", "GraphQL", "React", "Angular", "Flutter",
+            "Node.js", "Express", "MongoDB", "PostgreSQL", "MySQL", "Docker", "Kubernetes", "AWS", "Azure", "GCP",
+            "Git", "CI/CD", "DevOps", "TDD", "BDD", "Scrum", "Kanban", "NoSQL", "Firebase", "REST", "API", "Microservices",
+            "HTML", "CSS", "TypeScript",
+        ])
 
     def _extract_skills(self, text: str) -> List[str]:
         words = re.findall(r'\b\w{4,}\b', text.lower())
-        return [word for word in words if word not in self.stop_words]
+        return [word for word in words if word in self.stop_words]
 
-    def get_results(self) -> SkillTrendsResult:
+    def results(self) -> SkillTrendsResult:
         skills_by_country = {}
         for country, group in self.df.groupby('Pays'):
             all_skills = []
@@ -72,8 +76,9 @@ class SkillTrendsAnalyzer(DataAnalyzer):
         
         return SkillTrendsResult(report)
 
+# TODO: corriger cette classe. Le problème doit surement venir de la regex utilisée
 class CVFormatAnalyzer(DataAnalyzer):
-    def get_results(self) -> CVFormatResult:
+    def results(self) -> CVFormatResult:
         cv_formats = self.df['CV'].apply(
             lambda x: (
                 re.search(r'\.([a-zA-Z0-9]+)(?=[/?]|$)', str(x)).group(1).lower() 
@@ -90,11 +95,11 @@ class CVFormatAnalyzer(DataAnalyzer):
         return CVFormatResult(report)
 
 class PatternsAnalyzer(DataAnalyzer):
-    def get_results(self) -> PatternsResult:
+    def results(self) -> PatternsResult:
         all_descriptions = ' '.join(self.df['Profil_Recherche'].str.lower())
         keywords = re.findall(r'\b\w{6,}\b', all_descriptions)
         keyword_counts = Counter(keywords).most_common(10)
-        
+
         report = "Mots-clés récurrents dans les descriptions :\n"
         for word, count in keyword_counts:
             report += f"- {word} ({count} occurrences)\n"
@@ -119,12 +124,12 @@ class PlatformSuccessAnalyzer(DataAnalyzer):
         return PlatformSuccessResult(report)
 
 class ResponseTimeAnalyzer(DataAnalyzer):
-    def get_results(self) -> ResponseTimeResult:
-        # Filtrer les candidatures avec réponse
-        df_responses = self.df[self.df['Statut'] != 'Sans réponse']
+    def results(self) -> ResponseTimeResult:
+        # Filtrer les candidatures avec réponse 
+        df_responses = self.df[self.df['Statut'] != 'Sans réponse'].copy()
         
         # Calculer la durée de réponse
-        df_responses['Duree_Reponse'] = (
+        df_responses.loc[:, 'Duree_Reponse'] = (
             df_responses['Date_Reponse'] - df_responses['Date_Candidature']
         ).dt.days
 
@@ -137,7 +142,7 @@ class ResponseTimeAnalyzer(DataAnalyzer):
         return ResponseTimeResult(report)
 
 class RejectionRateAnalyzer(DataAnalyzer):
-    def get_results(self) -> RejectionRateResult:
+    def results(self) -> RejectionRateResult:
         # Compter les réponses
         total_reponses = self.df[self.df['Statut'] != 'Sans réponse'].shape[0]
         refus_count = self.df[self.df['Statut'] == 'Refus'].shape[0]
@@ -165,20 +170,20 @@ class AnalysisCoordinator:
             errors='coerce'
         )
         
-    def execute_analysis(self) -> Dict[str, AnalysisResult]:
+    def analysis(self) -> Dict[str, AnalysisResult]:
         return {
-            'skill_trends': SkillTrendsAnalyzer(self.df).get_results(),
-            'cv_formats': CVFormatAnalyzer(self.df).get_results(),
-            'patterns': PatternsAnalyzer(self.df).get_results(),
-            'platform_success': PlatformSuccessAnalyzer(self.df).get_results(),
-            'response_time': ResponseTimeAnalyzer(self.df).get_results(),
-            'rejection_rate': RejectionRateAnalyzer(self.df).get_results()
+            'skill_trends': SkillTrendsAnalyzer(self.df).results(),
+            'cv_formats': CVFormatAnalyzer(self.df).results(),
+            'patterns': PatternsAnalyzer(self.df).results(),
+            'platform_success': PlatformSuccessAnalyzer(self.df).results(),
+            'response_time': ResponseTimeAnalyzer(self.df).results(),
+            'rejection_rate': RejectionRateAnalyzer(self.df).results()
         }
 
 # ========== Main Execution ==========
 if __name__ == "__main__":
     coordinator = AnalysisCoordinator('Suivi entreprises tech - Feuille 1.csv')
-    results = coordinator.execute_analysis()
+    results = coordinator.analysis()
     
     for name, result in results.items():
         print(f"\n=== {name.replace('_', ' ').title()} ===")
