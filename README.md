@@ -33,7 +33,8 @@ France:
 
 === Cv Formats ===
 Formats de CV utilisés :
-- com: 9 utilisations
+- "cv_amanmenda_fr.pdf": 9 utilisations
+- "cv_amanmenda_en.pdf": 2 utilisations
 
 
 === Patterns ===
