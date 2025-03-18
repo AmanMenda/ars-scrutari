@@ -50,22 +50,22 @@ class SkillTrendsAnalyzer(DataAnalyzer):
     def __init__(self, df: pd.DataFrame):
         super().__init__(df)
         self.skills_words = set([
-            "développement", "C", "C++", "Java", "Python", "JavaScript", "GraphQL", "React", "Angular", "Flutter",
-            "Node.js", "Express", "MongoDB", "PostgreSQL", "MySQL", "Docker", "Kubernetes", "AWS", "Azure", "GCP",
-            "Git", "CI/CD", "DevOps", "TDD", "BDD", "Scrum", "Kanban", "NoSQL", "Firebase", "REST", "API", "Microservices",
-            "HTML", "CSS", "TypeScript",
+            "c", "c++", "java", "python", "javascript", "graphql", "react", "angular", "flutter",
+            "node.js", "express", "mongodb", "postgresql", "mysql", "docker", "kubernetes", "aws", "azure", "gcp",
+            "git", "ci/cd", "devops", "tdd", "scrum", "kanban", "nosql", "firebase", "rest", "api", "microservices",
+            "html", "css", "typescript",
         ])
 
-    def _extract_skills(self, text: str) -> List[str]:
+    def skills(self, text: str) -> List[str]:
         words = re.findall(r'\b\w{4,}\b', text.lower())
-        return [word for word in words if word in self.stop_words]
+        return [word for word in words if word in self.skills_words]
 
     def results(self) -> SkillTrendsResult:
         skills_by_country = {}
         for country, group in self.df.groupby('Pays'):
             all_skills = []
             for desc in group['Profil_Recherche']:
-                all_skills.extend(self._extract_skills(desc))
+                all_skills.extend(self.skills(desc))
             skills_by_country[country] = Counter(all_skills).most_common(5)
         
         report = "Compétences les plus recherchées par pays :\n"
@@ -107,7 +107,7 @@ class PatternsAnalyzer(DataAnalyzer):
         return PatternsResult(report)
 
 class PlatformSuccessAnalyzer(DataAnalyzer):
-    def get_results(self) -> PlatformSuccessResult:
+    def results(self) -> PlatformSuccessResult:
         platform_stats = self.df.groupby(['Pays', 'Plateforme'])['Statut'].agg(
             total='count',
             responses=lambda x: x[x != 'Sans réponse'].count()
